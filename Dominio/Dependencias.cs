@@ -20,5 +20,7 @@ namespace Infraestrutura
 
         public ModificarMatriculas modificarMatricula = new ModificarMatriculas();
 
+        public connectionString connectionString = new connectionString();
+
     }
 }

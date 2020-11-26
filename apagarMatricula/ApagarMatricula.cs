@@ -29,9 +29,18 @@ namespace apagarMatricula
             }
         }
 
-        private static string carregarConnectionString(string id = "Default")
+        public static string carregarConnectionString(string id = "Default")
         {
-            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
+            var path = System.IO.Path.GetDirectoryName(
+                System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+
+            var caminho = ConfigurationManager.ConnectionStrings[id].ConnectionString;
+
+            path = path.Replace("file:\\", "");
+
+            caminho = caminho.Replace("|Diretorio|", path);
+
+            return caminho;
         }
     }
 }
