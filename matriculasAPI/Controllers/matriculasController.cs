@@ -26,7 +26,6 @@ namespace matriculasAPI.Controllers
         public Aluno Get(string id)
         {
             return _dependencias.matriculas.carregarAlunoEspecifico(id);
-
         }
 
         // POST api/values
