@@ -13,9 +13,11 @@ namespace modificarMatriculas
 {
     public class ModificarMatriculas
     {
+        private ConnectionString connectionString = new ConnectionString();
+
         public Aluno modificarAluno(Aluno aluno, string id)
         {
-            using (IDbConnection cnn = new SQLiteConnection(carregarConnectionString(), true))
+            using (IDbConnection cnn = new SQLiteConnection(connectionString.carregarConnectionString(), true))
             {
                 cnn.Execute("UPDATE Alunos " +
                     "SET escolaAluno = @escolaAluno," +
@@ -28,20 +30,6 @@ namespace modificarMatriculas
             }
 
             return aluno;
-        }
-
-        public static string carregarConnectionString(string id = "Default")
-        {
-            var path = System.IO.Path.GetDirectoryName(
-                System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-
-            var caminho = ConfigurationManager.ConnectionStrings[id].ConnectionString;
-
-            path = path.Replace("file:\\", "");
-
-            caminho = caminho.Replace("|Diretorio|", path);
-
-            return caminho;
         }
     }
 }

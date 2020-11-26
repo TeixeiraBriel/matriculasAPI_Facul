@@ -13,9 +13,11 @@ namespace buscarTodasMatriculas
 {
     public class BuscarTodasMatriculas
     {
+        private ConnectionString connectionString = new ConnectionString();
+
         public List<Aluno> carregarAlunos()
         {
-            using (IDbConnection cnn = new SQLiteConnection(carregarConnectionString(), true))
+            using (IDbConnection cnn = new SQLiteConnection(connectionString.carregarConnectionString(), true))
             {
                 var saida = cnn.Query<Aluno>("select * from Alunos", new DynamicParameters());
                 return saida.ToList();
@@ -24,25 +26,11 @@ namespace buscarTodasMatriculas
 
         public Aluno carregarAlunoEspecifico(string id)
         {
-            using (IDbConnection cnn = new SQLiteConnection(carregarConnectionString(), true))
+            using (IDbConnection cnn = new SQLiteConnection(connectionString.carregarConnectionString(), true))
             {
                 var saida = cnn.Query<Aluno>("select * from Alunos where matriculaAluno='" + id + "'", new DynamicParameters()).FirstOrDefault();
                 return saida;
             }
-        }
-
-        public static string carregarConnectionString(string id = "Default")
-        {
-            var path = System.IO.Path.GetDirectoryName(
-                System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-
-            var caminho = ConfigurationManager.ConnectionStrings[id].ConnectionString;
-
-            path = path.Replace("file:\\", "");
-
-            caminho = caminho.Replace("|Diretorio|", path);
-
-            return caminho;
         }
     }
 }

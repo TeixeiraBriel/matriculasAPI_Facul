@@ -13,9 +13,11 @@ namespace apagarMatricula
 {
     public class ApagarMatricula
     {
+        private ConnectionString connectionString = new ConnectionString();
+
         public string apagarAlunoEspecifico(string id)
         {
-            using (IDbConnection cnn = new SQLiteConnection(carregarConnectionString(), true))
+            using (IDbConnection cnn = new SQLiteConnection(connectionString.carregarConnectionString(), true))
             {
                 var saida = cnn.Execute("delete from Alunos where matriculaAluno='" + id + "'", new DynamicParameters());
                 if (saida == 0)
@@ -27,20 +29,6 @@ namespace apagarMatricula
                     return "success";
                 }
             }
-        }
-
-        public static string carregarConnectionString(string id = "Default")
-        {
-            var path = System.IO.Path.GetDirectoryName(
-                System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-
-            var caminho = ConfigurationManager.ConnectionStrings[id].ConnectionString;
-
-            path = path.Replace("file:\\", "");
-
-            caminho = caminho.Replace("|Diretorio|", path);
-
-            return caminho;
         }
     }
 }

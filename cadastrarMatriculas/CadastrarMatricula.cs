@@ -13,9 +13,11 @@ namespace cadastrarMatriculas
 {
     public class CadastrarMatricula
     {
+        private ConnectionString connectionString = new ConnectionString();
+
         public string cadastrarAluno(Aluno aluno)
         {
-            using (IDbConnection cnn = new SQLiteConnection(carregarConnectionString(), true))
+            using (IDbConnection cnn = new SQLiteConnection(connectionString.carregarConnectionString(), true))
             {
                 var saida = cnn.Query<int>("select Count() from Alunos", new DynamicParameters()).FirstOrDefault();
                 aluno.matriculaAluno = (saida + 1).ToString();
@@ -39,20 +41,6 @@ namespace cadastrarMatriculas
 
                 return "Gerado com o ID: " + aluno.matriculaAluno;
             }
-        }
-
-        public static string carregarConnectionString(string id = "Default")
-        {
-            var path = System.IO.Path.GetDirectoryName(
-                System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-
-            var caminho = ConfigurationManager.ConnectionStrings[id].ConnectionString;
-
-            path = path.Replace("file:\\", "");
-
-            caminho = caminho.Replace("|Diretorio|", path);
-
-            return caminho;
         }
     }
 }

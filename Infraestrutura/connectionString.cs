@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Infraestrutura
 {
-    public class connectionString
+    public class ConnectionString
     {
-        public static string carregarConnectionString(string id = "Default")
+        public string carregarConnectionString(string id = "Default")
         {
             var path = System.IO.Path.GetDirectoryName(
                 System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
