@@ -5,6 +5,20 @@ VisualStudioVersion = 15.0.28307.1209
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "matriculasAPI", "matriculasAPI\matriculasAPI.csproj", "{98BB1179-5E5B-4131-B1E1-FCC436BA0A49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cadastrarMatriculas", "cadastrarMatriculas\cadastrarMatriculas.csproj", "{A0B69551-50B9-43BC-B5AA-291F05551997}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UTest", "UTest", "{9D1DF726-04F0-4158-AEC4-A95ECDA9FE05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "buscarTodasMatriculas", "buscarTodasMatriculas\buscarTodasMatriculas.csproj", "{0959DBDA-33F3-446E-A676-D07CF3147687}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestrutura", "Infraestrutura\Infraestrutura.csproj", "{EC0A5F4D-22C2-4622-8DEB-D46C58249B62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{EC271741-E55E-49F2-B7D8-4638683D8CA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "apagarMatricula", "apagarMatricula\apagarMatricula.csproj", "{7EEE4C45-6044-4F18-96C4-FB183AFE5F66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "modificarMatriculas", "modificarMatriculas\modificarMatriculas.csproj", "{97E3E36D-1A2F-4893-84BB-AA17FB4A6A51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +29,30 @@ Global
 		{98BB1179-5E5B-4131-B1E1-FCC436BA0A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98BB1179-5E5B-4131-B1E1-FCC436BA0A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98BB1179-5E5B-4131-B1E1-FCC436BA0A49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0B69551-50B9-43BC-B5AA-291F05551997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B69551-50B9-43BC-B5AA-291F05551997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B69551-50B9-43BC-B5AA-291F05551997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B69551-50B9-43BC-B5AA-291F05551997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0959DBDA-33F3-446E-A676-D07CF3147687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0959DBDA-33F3-446E-A676-D07CF3147687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0959DBDA-33F3-446E-A676-D07CF3147687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0959DBDA-33F3-446E-A676-D07CF3147687}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC0A5F4D-22C2-4622-8DEB-D46C58249B62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC0A5F4D-22C2-4622-8DEB-D46C58249B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC0A5F4D-22C2-4622-8DEB-D46C58249B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC0A5F4D-22C2-4622-8DEB-D46C58249B62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC271741-E55E-49F2-B7D8-4638683D8CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC271741-E55E-49F2-B7D8-4638683D8CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC271741-E55E-49F2-B7D8-4638683D8CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC271741-E55E-49F2-B7D8-4638683D8CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EEE4C45-6044-4F18-96C4-FB183AFE5F66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EEE4C45-6044-4F18-96C4-FB183AFE5F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EEE4C45-6044-4F18-96C4-FB183AFE5F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EEE4C45-6044-4F18-96C4-FB183AFE5F66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97E3E36D-1A2F-4893-84BB-AA17FB4A6A51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97E3E36D-1A2F-4893-84BB-AA17FB4A6A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97E3E36D-1A2F-4893-84BB-AA17FB4A6A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97E3E36D-1A2F-4893-84BB-AA17FB4A6A51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

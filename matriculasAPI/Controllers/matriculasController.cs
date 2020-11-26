@@ -1,5 +1,10 @@
-﻿using System;
+﻿using buscarTodasMatriculas;
+using cadastrarMatriculas;
+using Infraestrutura;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -9,31 +14,37 @@ namespace matriculasAPI.Controllers
 {
     public class MatriculasController : ApiController
     {
+        Dependencias _dependencias = new Dependencias();
+
         // GET api/values
-        public IEnumerable<string> Get()
+        public List<Aluno> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _dependencias.matriculas.carregarAlunos();
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public Aluno Get(string id)
         {
-            return "value";
+            return _dependencias.matriculas.carregarAlunoEspecifico(id);
+
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public string Post([FromBody]Aluno value)
         {
+            return _dependencias.cadastros.cadastrarAluno(value);
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        public Aluno Put(string id, [FromBody]Aluno value)
         {
+            return _dependencias.modificarMatricula.modificarAluno(value, id);
         }
 
         // DELETE api/values/5
-        public void Delete(int id)
+        public string Delete(string id)
         {
+            return _dependencias.matriculasApagar.apagarAlunoEspecifico(id);
         }
     }
 }
