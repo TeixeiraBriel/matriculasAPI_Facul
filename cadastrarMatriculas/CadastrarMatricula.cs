@@ -19,7 +19,7 @@ namespace cadastrarMatriculas
         {
             using (IDbConnection cnn = new SQLiteConnection(connectionString.carregarConnectionString(), true))
             {
-                var saida = cnn.Query<int>("select Count() from Alunos", new DynamicParameters()).FirstOrDefault();
+                var saida = cnn.Query<int>("select matriculaAluno from Alunos order by matriculaAluno desc  LIMIT 1", new DynamicParameters()).FirstOrDefault();
                 aluno.matriculaAluno = (saida + 1).ToString();
                 cnn.Execute("insert into Alunos" +
                             "(escolaAluno," +
